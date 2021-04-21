@@ -1,6 +1,7 @@
 package com.orangetalents.apirest.user;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
@@ -14,13 +15,13 @@ public class UserController {
     public UserController(UserService userService) {
         this.userService = userService;
     }
-
     @GetMapping
+    @ResponseStatus(HttpStatus.OK)
     public List<User> getUsers(){
         return userService.getUsers();
     }
-
     @PostMapping
+    @ResponseStatus(HttpStatus.CREATED)
     public void registerNewUser(@RequestBody User user){
         userService.addNewUser(user);
     }

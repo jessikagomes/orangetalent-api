@@ -3,6 +3,8 @@ package com.orangetalents.apirest.user;
 import javax.persistence.*;
 import java.time.LocalDate;
 import java.time.Period;
+import java.util.List;
+import java.util.Objects;
 
 @Entity
 @Table(name="`user`")
@@ -19,28 +21,34 @@ public class User {
     )
     private Long id;
     private String name;
+    @Column(nullable = false)
     private String email;
+    @Column(nullable = false, unique = true)
     private String cpf;
     private LocalDate dob;
+    @OneToMany(fetch = FetchType.LAZY, cascade ={CascadeType.PERSIST, CascadeType.MERGE, CascadeType.REMOVE})
+    private List<Address> addresses;
     @Transient
     private Integer age;
 
     public User() {
     }
 
-    public User(Long id, String name, String email, String cpf, LocalDate dob) {
+    public User(Long id, String name, String email, String cpf, LocalDate dob, List<Address> addresses) {
         this.id = id;
         this.name = name;
         this.email = email;
         this.cpf = cpf;
         this.dob = dob;
+        this.addresses = addresses;
     }
 
-    public User(String name, String email, String cpf, LocalDate dob) {
+    public User(String name, String email, String cpf, LocalDate dob, List<Address> addresses) {
         this.name = name;
         this.email = email;
         this.cpf = cpf;
         this.dob = dob;
+        this.addresses = addresses;
     }
 
     public Long getId() {
@@ -99,6 +107,7 @@ public class User {
                 ", email='" + email + '\'' +
                 ", cpf='" + cpf + '\'' +
                 ", dob=" + dob +
+                ", addresses=" + addresses +
                 ", age=" + age +
                 '}';
     }
