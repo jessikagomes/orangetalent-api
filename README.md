@@ -10,7 +10,7 @@ System for managing a company's clients through a REST API, created with Spring 
 - [ ]  Deployment of the system in the cloud through Heroku
 - [ ] Postman
 
-#### 👾A API possui os endpoints:
+#### 👾Endpoints of API:
 
 ```
 /api/v1/user 		   --> GET users list
@@ -19,11 +19,11 @@ System for managing a company's clients through a REST API, created with Spring 
 /api/v1/user/{userId}  --> DELETE user by ID
 ```
 
-Exemplo:
+Exemple:
 
 ```
 http://localhost:8080/
-    OU
+    Or
 http://localhost:8080/api/v1/user
 Show the list of users resgistrered
 ```
