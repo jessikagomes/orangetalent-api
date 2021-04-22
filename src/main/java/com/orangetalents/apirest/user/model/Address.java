@@ -1,4 +1,4 @@
-package com.orangetalents.apirest.user;
+package com.orangetalents.apirest.user.model;
 
 import javax.persistence.*;
 

@@ -1,5 +1,6 @@
-package com.orangetalents.apirest.user;
+package com.orangetalents.apirest.user.repository;
 
+import com.orangetalents.apirest.user.model.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 import java.util.Optional;

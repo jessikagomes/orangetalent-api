@@ -1,5 +1,7 @@
-package com.orangetalents.apirest.user;
+package com.orangetalents.apirest.user.controller;
 
+import com.orangetalents.apirest.user.model.User;
+import com.orangetalents.apirest.user.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;

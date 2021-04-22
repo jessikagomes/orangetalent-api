@@ -1,10 +1,11 @@
-package com.orangetalents.apirest.user;
+package com.orangetalents.apirest.user.model;
+
+import com.orangetalents.apirest.user.model.Address;
 
 import javax.persistence.*;
 import java.time.LocalDate;
 import java.time.Period;
 import java.util.List;
-import java.util.Objects;
 
 @Entity
 @Table(name="`user`")
